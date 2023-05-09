@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>analises module &#8212; Classes Dados 0.0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/sphinx_highlight.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="module-analises">
+<span id="analises-module"></span><h1>analises module<a class="headerlink" href="#module-analises" title="Permalink to this heading">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="analises.Analyzes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">analises.</span></span><span class="sig-name descname"><span class="pre">Analyzes</span></span><a class="headerlink" href="#analises.Analyzes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="analises.Analyzes.barplot">
+<span class="sig-name descname"><span class="pre">barplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="headerlink" href="#analises.Analyzes.barplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método barplot: Gera um gráfico de barras do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>x: str.</p>
+<p>y: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>x -&gt; Argumento onde o usuário fornece a coluna do dataframe fornecido que ele deseja utilizar como eixo x.</p>
+<p>y -&gt; Argumento onde o usuário fornece a coluna do datafame fornecido que ele deseja utilizar como eixo y.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_barras = analise.barplot(data=df, x=’Coluna_1’, y=’Coluna_2’)</p>
+<p>grafico_barras.show()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="analises.Analyzes.boxplot">
+<span class="sig-name descname"><span class="pre">boxplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="headerlink" href="#analises.Analyzes.boxplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método boxplot: Gera um gráfico de caixa do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>column: str.</p>
+<p>x_label: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>column -&gt; Argumento onde o usuário fornece a coluna que ele deseja fazer a análise de outliers.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_caixa = analise.boxplot(data=df, column=’Coluna_3’, x_label=’Outliers da coluna 3’)</p>
+<p>grafico_caixa.show()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="analises.Analyzes.correlacao">
+<span class="sig-name descname"><span class="pre">correlacao</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colunas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#analises.Analyzes.correlacao" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método correlacao: Gera uma tabela de correlação entre as colunas.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>colunas: list.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>colunas -&gt; Argumento onde o usuário fornece uma lista com as colunas que deseja utilizar para a correlação.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>graifico_correlacao = analise.correlacao(data=df, colunas=[‘Coluna_3’, ‘Coluna_20’, ‘Coluna_13’])</p>
+<p>print(grafico_correlacao)</p>
+<p>NOTA:</p>
+<p>O argumento de colunas NÃO É OBRIGATÓRIO</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="analises.Analyzes.dispersao_plot">
+<span class="sig-name descname"><span class="pre">dispersao_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coluna_referencia</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titulo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="headerlink" href="#analises.Analyzes.dispersao_plot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método dispersao_plot: Gera um gráfico de dispersão do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data1: Dataframe.</p>
+<p>data2: Dataframe.</p>
+<p>coluna_referencia: str.</p>
+<p>x_label: str.</p>
+<p>y_label: str.</p>
+<p>titulo: str</p>
+<p>Descrição dos parâmetros:</p>
+<p>data1 -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>data2 -&gt; Argumento onde o usuário fornece o segundo conjunto de dados em formato de dataframe.</p>
+<p>x_label -&gt; Argumento onde o usuário fornece a legenda que deseja exibir no eixo x.</p>
+<p>y_label -&gt; Argumento onde o usuário fornece a legenda que deseja exibir no eixo y.</p>
+<p>coluna_referencia -&gt; Argumento onde o usuário fornece o nome da coluna em comum que se encontra nos dois dataframes e que será comparada.</p>
+<p>titulo -&gt; Argumento onde o usuário fornece o título que dejesa para o seu gráfico.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df1 = ‘caminho_do_seu_dataframe1’</p>
+<p>df2 = ‘caminho_do_seu_dataframe2’</p>
+<p>grafico_dispersao = analise.dispersao_plot(data1=df1, data2=df2, x_label=’Legenda do eixo x’, y_label= ‘Legenda do eixo y’, coluna_referencia=’Coluna’, titulo: ‘Esse é o título do meu gráfico’)</p>
+<p>grafico_dispersao.show()</p>
+<p>NOTA:</p>
+<p>certifique-se que a coluna de referência nos dois dataframes estejam com o mesmo nome.</p>
+<p>Exemplo:</p>
+<p>O usuário possui dois dataframes, um dataframe de vendas de um produto, e um dataframe de lucro obtido com esse produto.</p>
+<p>Caso queira comparar a dispersão entre os dois dataframes, utilize uma coluna em comum entre as duas, ex: Produto4</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="analises.Analyzes.grafico_de_barras_e_linha">
+<span class="sig-name descname"><span class="pre">grafico_de_barras_e_linha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataBarra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataLinha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coluna_em_comum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coluna_barra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coluna_linha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label_barra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label_linha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="headerlink" href="#analises.Analyzes.grafico_de_barras_e_linha" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método grafico_de_barras_e_linhas: Gera um gráfico de barras com linha do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>dataBarra: Dataframe.</p>
+<p>dataLinha: Dataframe.</p>
+<p>coluna_em_comum: str.</p>
+<p>coluna_barra: str.</p>
+<p>coluna_linha: str.</p>
+<p>x_label: str.</p>
+<p>y_label_barra: str.</p>
+<p>y_label_linha: str.</p>
+<p>title: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>dataBarra -&gt; Argumento onde o usuário fornece o conjunto de dados desejado para ser representado em barra, no formato Dataframe.</p>
+<p>dataLinha -&gt; Argumento onde o usuário fornece o conjunto de dados desejado para ser representado em linha, no formato Dataframe.</p>
+<p>coluna_em_comum -&gt; Argumento onde o usuário fornece a coluna do dataframe em que vai ser comparada pelos dois.</p>
+<p>coluna_barra -&gt; Argumento onde o usuário fornece a coluna do dataframe em que vai ser usada para a barra.</p>
+<p>coluna_linha -&gt; Argumento onde o usuário fornece a coluna do dataframe em que vai ser usada para a linha.</p>
+<p>x_label -&gt; Argumento onde o usuário coloca a legenda do eixo x.</p>
+<p>y_label_barra -&gt; Argumento onde o usuário coloca a legenda do eixo y da barra.</p>
+<p>y_label_linha -&gt; Argumento onde o usuário coloca a legenda do eixo y da linha.</p>
+<p>title -&gt; Argumento onde o ususário coloca o título dog gráfico.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df1 = ‘caminho_do_seu_dataframe’</p>
+<p>df2 = ‘caminho_do_seu_segundo_dataframe’</p>
+<p>grafico_barras_e_linha = analise.grafico_de_barras_e_linha(dataBarra=df1, dataLinha= df2, coluna_em_comum=’Pets’, coluna_barra=’Pets_Vendas’, coluna_linha=’Pets_inflação’, x_label=’Pets’, y_label_barra= ‘Vendas de itens de pets’, y_label_linha=’Inflação sobre os produtos’, title=’Relação vendas de itens de pets com inflação sobre os produtos’)</p>
+<p>grafico_barras_e_linha.show()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="analises.Analyzes.lineplot">
+<span class="sig-name descname"><span class="pre">lineplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="headerlink" href="#analises.Analyzes.lineplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método lineplot: Gera um gráfico de linha do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>x: str.</p>
+<p>y: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>x -&gt; Argumento onde o usuário fornece a coluna do dataframe fornecido que ele deseja utilizar como eixo x.</p>
+<p>y -&gt; Argumento onde o usuário fornece a coluna do datafame fornecido que ele deseja utilizar como eixo y.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_linha = analise.lineplot(data=df, x=’Coluna_1’, y=’Coluna_2’)</p>
+<p>grafico_linha.show()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="analises.Analyzes.matriz_corr">
+<span class="sig-name descname"><span class="pre">matriz_corr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colunas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="headerlink" href="#analises.Analyzes.matriz_corr" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método matriz_corr: Gera um gráfico de matriz de correlação do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>colunas: list.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>colunas -&gt; Argumento onde o usuário fornece uma lista com as colunas que deseja utilizar para a correlação.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_matriz_corr = analise.matriz_corr(data=df, colunas=[‘Coluna_1’, ‘Coluna_7’, ‘Coluna_4’])</p>
+<p>grafico_matriz_corr.show()</p>
+<p>NOTA:</p>
+<p>O argumento de colunas NÃO É OBRIGATÓRIO</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="analises.Analyzes.pointplot">
+<span class="sig-name descname"><span class="pre">pointplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="headerlink" href="#analises.Analyzes.pointplot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Método pointplot: Gera um gráfico de linha com pontos do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>x: str.</p>
+<p>y: str.</p>
+<p>title: str.</p>
+<p>x_label: str.</p>
+<p>y_label: str.</p>
+<p>hue: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>x -&gt; Argumento onde o usuário fornece a coluna do dataframe fornecido que ele deseja utilizar como eixo x.</p>
+<p>y -&gt; Argumento onde o usuário fornece a coluna do datafame fornecido que ele deseja utilizar como eixo y.</p>
+<p>title -&gt; Argumento onde o usuário fornece o título do gráfico.</p>
+<p>x_label -&gt; Argumento onde o usuário fornece a legenda do eixo x.</p>
+<p>y_label -&gt; Argumento onde o usuário fornece a legenda do eixo y.</p>
+<p>hue -&gt; Argumento onde o usuário fornece a coluna do dataframe responsável por segregar os dados.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_pontos = analise.pointplot(data=df, x=’Coluna_1’, y=’Coluna_2’, title=’Titulo do gráfico’, x_label=’Legenda do eixo x’, y_label=’Legenda do eixo y’, hue=’Coluna_5’)</p>
+<p>grafico_pontos.show()</p>
+<p>NOTA:</p>
+<p>Nesse exemplo de uso, repare que o hue é a coluna 5 do dataframe, imagine que esse dataframe em questão na coluna 5 tenha informações de classificação.</p>
+<p>E esse dataframe está com as seguintes classificações: Pequeno, Médio e Grande.</p>
+<p>Quando o gráfico for plotado, irá ter 3 linhas, uma para cada classificação.</p>
+<p>O argumento hue NÃO É OBRIGATÓRIO</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Classes Dados</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2023, Brayan Robert.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 7.0.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.13</a>
+      
+      |
+      <a href="../_sources/apidoc/analises.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
