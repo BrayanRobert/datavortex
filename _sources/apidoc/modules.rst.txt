@@ -4,6 +4,7 @@ src
 .. toctree::
    :maxdepth: 4
 
+   analise_exploratoria
    analises
    processamentodados
    tratamento

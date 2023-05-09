@@ -1,0 +1,7 @@
+analise\_exploratoria module
+============================
+
+.. automodule:: analise_exploratoria
+   :members:
+   :undoc-members:
+   :show-inheritance:
