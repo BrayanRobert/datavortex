@@ -1,7 +1,0 @@
-tratamento module
-=================
-
-.. automodule:: tratamento
-   :members:
-   :undoc-members:
-   :show-inheritance:
