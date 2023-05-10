@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>src package &mdash; MLToolbox  documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="src" href="modules.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            MLToolbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">src</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">src package</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.analises">src.analises module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#src.analises.Analyzes"><code class="docutils literal notranslate"><span class="pre">Analyzes</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.processamentodados">src.processamentodados module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#src.processamentodados.DataProcess"><code class="docutils literal notranslate"><span class="pre">DataProcess</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src.tratamento">src.tratamento module</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#src.tratamento.Treatment"><code class="docutils literal notranslate"><span class="pre">Treatment</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#module-src">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">MLToolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="modules.html">src</a></li>
+      <li class="breadcrumb-item active">src package</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/src.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="src-package">
+<h1>src package<a class="headerlink" href="#src-package" title="Permalink to this heading"></a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-src.analises">
+<span id="src-analises-module"></span><h2>src.analises module<a class="headerlink" href="#module-src.analises" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.analises.Analyzes">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.analises.</span></span><span class="sig-name descname"><span class="pre">Analyzes</span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.analises.Analyzes.barplot">
+<span class="sig-name descname"><span class="pre">barplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes.barplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes.barplot" title="Permalink to this definition"></a></dt>
+<dd><p>Método barplot: Gera um gráfico de barras do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>x: str.</p>
+<p>y: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>x -&gt; Argumento onde o usuário fornece a coluna do dataframe fornecido que ele deseja utilizar como eixo x.</p>
+<p>y -&gt; Argumento onde o usuário fornece a coluna do datafame fornecido que ele deseja utilizar como eixo y.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_barras = analise.barplot(data=df, x=’Coluna_1’, y=’Coluna_2’)</p>
+<p>grafico_barras.show()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.analises.Analyzes.boxplot">
+<span class="sig-name descname"><span class="pre">boxplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes.boxplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes.boxplot" title="Permalink to this definition"></a></dt>
+<dd><p>Método boxplot: Gera um gráfico de caixa do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>column: str.</p>
+<p>x_label: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>column -&gt; Argumento onde o usuário fornece a coluna que ele deseja fazer a análise de outliers.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_caixa = analise.boxplot(data=df, column=’Coluna_3’, x_label=’Outliers da coluna 3’)</p>
+<p>grafico_caixa.show()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.analises.Analyzes.correlacao">
+<span class="sig-name descname"><span class="pre">correlacao</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colunas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes.correlacao"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes.correlacao" title="Permalink to this definition"></a></dt>
+<dd><p>Método correlacao: Gera uma tabela de correlação entre as colunas.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>colunas: list.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>colunas -&gt; Argumento onde o usuário fornece uma lista com as colunas que deseja utilizar para a correlação.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>graifico_correlacao = analise.correlacao(data=df, colunas=[‘Coluna_3’, ‘Coluna_20’, ‘Coluna_13’])</p>
+<p>print(grafico_correlacao)</p>
+<p>NOTA:</p>
+<p>O argumento de colunas NÃO É OBRIGATÓRIO</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.analises.Analyzes.dispersao_plot">
+<span class="sig-name descname"><span class="pre">dispersao_plot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coluna_referencia</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">titulo</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes.dispersao_plot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes.dispersao_plot" title="Permalink to this definition"></a></dt>
+<dd><p>Método dispersao_plot: Gera um gráfico de dispersão do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data1: Dataframe.</p>
+<p>data2: Dataframe.</p>
+<p>coluna_referencia: str.</p>
+<p>x_label: str.</p>
+<p>y_label: str.</p>
+<p>titulo: str</p>
+<p>Descrição dos parâmetros:</p>
+<p>data1 -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>data2 -&gt; Argumento onde o usuário fornece o segundo conjunto de dados em formato de dataframe.</p>
+<p>x_label -&gt; Argumento onde o usuário fornece a legenda que deseja exibir no eixo x.</p>
+<p>y_label -&gt; Argumento onde o usuário fornece a legenda que deseja exibir no eixo y.</p>
+<p>coluna_referencia -&gt; Argumento onde o usuário fornece o nome da coluna em comum que se encontra nos dois dataframes e que será comparada.</p>
+<p>titulo -&gt; Argumento onde o usuário fornece o título que dejesa para o seu gráfico.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df1 = ‘caminho_do_seu_dataframe1’</p>
+<p>df2 = ‘caminho_do_seu_dataframe2’</p>
+<p>grafico_dispersao = analise.dispersao_plot(data1=df1, data2=df2, x_label=’Legenda do eixo x’, y_label= ‘Legenda do eixo y’, coluna_referencia=’Coluna’, titulo: ‘Esse é o título do meu gráfico’)</p>
+<p>grafico_dispersao.show()</p>
+<p>NOTA:</p>
+<p>certifique-se que a coluna de referência nos dois dataframes estejam com o mesmo nome.</p>
+<p>Exemplo:</p>
+<p>O usuário possui dois dataframes, um dataframe de vendas de um produto, e um dataframe de lucro obtido com esse produto.</p>
+<p>Caso queira comparar a dispersão entre os dois dataframes, utilize uma coluna em comum entre as duas, ex: Produto4</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.analises.Analyzes.grafico_de_barras_e_linha">
+<span class="sig-name descname"><span class="pre">grafico_de_barras_e_linha</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dataBarra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dataLinha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coluna_em_comum</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coluna_barra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">coluna_linha</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label_barra</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label_linha</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes.grafico_de_barras_e_linha"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes.grafico_de_barras_e_linha" title="Permalink to this definition"></a></dt>
+<dd><p>Método grafico_de_barras_e_linhas: Gera um gráfico de barras com linha do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>dataBarra: Dataframe.</p>
+<p>dataLinha: Dataframe.</p>
+<p>coluna_em_comum: str.</p>
+<p>coluna_barra: str.</p>
+<p>coluna_linha: str.</p>
+<p>x_label: str.</p>
+<p>y_label_barra: str.</p>
+<p>y_label_linha: str.</p>
+<p>title: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>dataBarra -&gt; Argumento onde o usuário fornece o conjunto de dados desejado para ser representado em barra, no formato Dataframe.</p>
+<p>dataLinha -&gt; Argumento onde o usuário fornece o conjunto de dados desejado para ser representado em linha, no formato Dataframe.</p>
+<p>coluna_em_comum -&gt; Argumento onde o usuário fornece a coluna do dataframe em que vai ser comparada pelos dois.</p>
+<p>coluna_barra -&gt; Argumento onde o usuário fornece a coluna do dataframe em que vai ser usada para a barra.</p>
+<p>coluna_linha -&gt; Argumento onde o usuário fornece a coluna do dataframe em que vai ser usada para a linha.</p>
+<p>x_label -&gt; Argumento onde o usuário coloca a legenda do eixo x.</p>
+<p>y_label_barra -&gt; Argumento onde o usuário coloca a legenda do eixo y da barra.</p>
+<p>y_label_linha -&gt; Argumento onde o usuário coloca a legenda do eixo y da linha.</p>
+<p>title -&gt; Argumento onde o ususário coloca o título dog gráfico.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df1 = ‘caminho_do_seu_dataframe’</p>
+<p>df2 = ‘caminho_do_seu_segundo_dataframe’</p>
+<p>grafico_barras_e_linha = analise.grafico_de_barras_e_linha(dataBarra=df1, dataLinha= df2, coluna_em_comum=’Pets’, coluna_barra=’Pets_Vendas’, coluna_linha=’Pets_inflação’, x_label=’Pets’, y_label_barra= ‘Vendas de itens de pets’, y_label_linha=’Inflação sobre os produtos’, title=’Relação vendas de itens de pets com inflação sobre os produtos’)</p>
+<p>grafico_barras_e_linha.show()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.analises.Analyzes.lineplot">
+<span class="sig-name descname"><span class="pre">lineplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes.lineplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes.lineplot" title="Permalink to this definition"></a></dt>
+<dd><p>Método lineplot: Gera um gráfico de linha do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>x: str.</p>
+<p>y: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>x -&gt; Argumento onde o usuário fornece a coluna do dataframe fornecido que ele deseja utilizar como eixo x.</p>
+<p>y -&gt; Argumento onde o usuário fornece a coluna do datafame fornecido que ele deseja utilizar como eixo y.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_linha = analise.lineplot(data=df, x=’Coluna_1’, y=’Coluna_2’)</p>
+<p>grafico_linha.show()</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.analises.Analyzes.matriz_corr">
+<span class="sig-name descname"><span class="pre">matriz_corr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">colunas</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes.matriz_corr"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes.matriz_corr" title="Permalink to this definition"></a></dt>
+<dd><p>Método matriz_corr: Gera um gráfico de matriz de correlação do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>colunas: list.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>colunas -&gt; Argumento onde o usuário fornece uma lista com as colunas que deseja utilizar para a correlação.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_matriz_corr = analise.matriz_corr(data=df, colunas=[‘Coluna_1’, ‘Coluna_7’, ‘Coluna_4’])</p>
+<p>grafico_matriz_corr.show()</p>
+<p>NOTA:</p>
+<p>O argumento de colunas NÃO É OBRIGATÓRIO</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.analises.Analyzes.pointplot">
+<span class="sig-name descname"><span class="pre">pointplot</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">title</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">x_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y_label</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hue</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'PIL.Image'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3/dist-packages/PIL/Image.py'&gt;</span></span></span><a class="reference internal" href="_modules/src/analises.html#Analyzes.pointplot"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.analises.Analyzes.pointplot" title="Permalink to this definition"></a></dt>
+<dd><p>Método pointplot: Gera um gráfico de linha com pontos do tipo imagem PIL.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>x: str.</p>
+<p>y: str.</p>
+<p>title: str.</p>
+<p>x_label: str.</p>
+<p>y_label: str.</p>
+<p>hue: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>x -&gt; Argumento onde o usuário fornece a coluna do dataframe fornecido que ele deseja utilizar como eixo x.</p>
+<p>y -&gt; Argumento onde o usuário fornece a coluna do datafame fornecido que ele deseja utilizar como eixo y.</p>
+<p>title -&gt; Argumento onde o usuário fornece o título do gráfico.</p>
+<p>x_label -&gt; Argumento onde o usuário fornece a legenda do eixo x.</p>
+<p>y_label -&gt; Argumento onde o usuário fornece a legenda do eixo y.</p>
+<p>hue -&gt; Argumento onde o usuário fornece a coluna do dataframe responsável por segregar os dados.</p>
+<p>Exemplo de uso:</p>
+<p>analise = Anaylzes()</p>
+<p>df = ‘caminho_do_seu_dataframe’</p>
+<p>grafico_pontos = analise.pointplot(data=df, x=’Coluna_1’, y=’Coluna_2’, title=’Titulo do gráfico’, x_label=’Legenda do eixo x’, y_label=’Legenda do eixo y’, hue=’Coluna_5’)</p>
+<p>grafico_pontos.show()</p>
+<p>NOTA:</p>
+<p>Nesse exemplo de uso, repare que o hue é a coluna 5 do dataframe, imagine que esse dataframe em questão na coluna 5 tenha informações de classificação.</p>
+<p>E esse dataframe está com as seguintes classificações: Pequeno, Médio e Grande.</p>
+<p>Quando o gráfico for plotado, irá ter 3 linhas, uma para cada classificação.</p>
+<p>O argumento hue NÃO É OBRIGATÓRIO</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.processamentodados">
+<span id="src-processamentodados-module"></span><h2>src.processamentodados module<a class="headerlink" href="#module-src.processamentodados" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.processamentodados.DataProcess">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.processamentodados.</span></span><span class="sig-name descname"><span class="pre">DataProcess</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="_modules/src/processamentodados.html#DataProcess"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.processamentodados.DataProcess" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Classe responsável para o processamento de dados</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.processamentodados.DataProcess.sheet_select">
+<span class="sig-name descname"><span class="pre">sheet_select</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sheet</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/processamentodados.html#DataProcess.sheet_select"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.processamentodados.DataProcess.sheet_select" title="Permalink to this definition"></a></dt>
+<dd><p>Retorna a aba selecionada da planilha em formato de DataFrame.</p>
+<p>Parâmetros:</p>
+<p>sheet: str</p>
+<p>Descrição dos parâmetros:</p>
+<p>sheet -&gt; Argumento onde o usuário vai passar o nome da aba que ele deseja trabalhar</p>
+<p>Exemplo de uso:</p>
+<p>df = ‘seu_excel.xlsx’</p>
+<p>processamento = DataProcess(data=df)</p>
+<p>aba_selecionada = processamento.sheet_select(sheet=’nome_da_aba’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.processamentodados.DataProcess.sheets">
+<span class="sig-name descname"><span class="pre">sheets</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="reference internal" href="_modules/src/processamentodados.html#DataProcess.sheets"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.processamentodados.DataProcess.sheets" title="Permalink to this definition"></a></dt>
+<dd><p>Retorna uma lista com os nomes de todas as abas da planilha.</p>
+<p>Exemplo de uso:</p>
+<p>CASO QUEIRA PASSAR UM EXCEL
+df_excel = ‘caminho_do_excel.xlsx’</p>
+<p>processamento = DataProcess(data=df_excel)</p>
+<p>lista_de_abas_da_planilha = processamento.sheets()</p>
+<p>CASO QUEIRA PASSAR UM CSV
+df_csv = ‘caminho_do_csv.csv’</p>
+<p>processamento_csv = DataProcess(data=df_csv)</p>
+<p>lista_de_abas_do_csv = processamento.sheets()</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src.tratamento">
+<span id="src-tratamento-module"></span><h2>src.tratamento module<a class="headerlink" href="#module-src.tratamento" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="src.tratamento.Treatment">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">src.tratamento.</span></span><span class="sig-name descname"><span class="pre">Treatment</span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.add_column_day">
+<span class="sig-name descname"><span class="pre">add_column_day</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.add_column_day"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.add_column_day" title="Permalink to this definition"></a></dt>
+<dd><p>Método add_column_day: Adiciona uma coluna de dia baseado na coluna de datas de um dataframe temporal.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>column: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>column -&gt; Coluna de referência (DATA) para que a coluna de ano seja criada baseada nela.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>df_com_coluna_de_ano = tratamento.add_column_day(data=df, column=’DATA’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.add_column_month">
+<span class="sig-name descname"><span class="pre">add_column_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.add_column_month"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.add_column_month" title="Permalink to this definition"></a></dt>
+<dd><p>Método add_column_month: Adiciona uma coluna de mês baseado na coluna de datas de um dataframe temporal.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>column: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>column -&gt; Coluna de referência (DATA) para que a coluna de ano seja criada baseada nela.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>df_com_coluna_de_mes = tratamento.add_column_month(data=df, column=’DATA’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.add_column_year">
+<span class="sig-name descname"><span class="pre">add_column_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.add_column_year"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.add_column_year" title="Permalink to this definition"></a></dt>
+<dd><p>Método add_column_year: Adiciona uma coluna de ano baseado na coluna de datas de um dataframe temporal.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>column: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>column -&gt; Coluna de referência (DATA) para que a coluna de ano seja criada baseada nela.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>df_com_coluna_de_ano = tratamento.add_column_year(data=df, column=’DATA’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.change_data_type">
+<span class="sig-name descname"><span class="pre">change_data_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.change_data_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.change_data_type" title="Permalink to this definition"></a></dt>
+<dd><p>Método change_data_type: Método para alterar o tipo de dados de uma coluna.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>column: str.</p>
+<p>type: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>column -&gt; Argumento onde o usuário fornece a coluna a ser alterada o tipo de dados.</p>
+<p>type -&gt; Argumento onde o usuário fornece para qual tipo de dados deseja alterar.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>CASO QUEIRA ALTERAR PARA DATETIME</p>
+<p>df_com_coluna_alterada_para_datetime = tratamento.change_data_type(data=df, column=’DATA’, type=’datetime’)</p>
+<p>NOTA:</p>
+<p>Nessa versão só está disponível a mudança para datetime</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.check_column_with_null_values">
+<span class="sig-name descname"><span class="pre">check_column_with_null_values</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.check_column_with_null_values"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.check_column_with_null_values" title="Permalink to this definition"></a></dt>
+<dd><p>Método check_column_with_null_values: Método responsável por informar uma lista com todas as colunas que possuem valores vazios.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece o dataframe.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘meu_dataframe’</p>
+<p>lista_das_colunas_com_valores_nulos = tratamento.check_column_with_null_values(data=df)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.column_range">
+<span class="sig-name descname"><span class="pre">column_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.column_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.column_range" title="Permalink to this definition"></a></dt>
+<dd><p>Método column_range: Filtra seu dataframe de acordo com um intervalo de colunas.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>start_column: str.</p>
+<p>end_column = str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>start_column -&gt; Argumento onde o usuário fornece a coluna inicial da filtragem.</p>
+<p>end_column -&gt; argumento onde o usuário fornece a coluna final da filtragem.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>df_filtrado_por_intervalo_de_colunas = tratamento.column_range(data=df, start_column=’Coluna_5’, end_column=’coluna_10’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.convert_dataframe_to_json">
+<span class="sig-name descname"><span class="pre">convert_dataframe_to_json</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">json_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">&lt;module</span> <span class="pre">'json'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3.10/json/__init__.py'&gt;</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.convert_dataframe_to_json"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.convert_dataframe_to_json" title="Permalink to this definition"></a></dt>
+<dd><p>Método convert_dataframe_to_json: Método responsável por converter um dataframe em um arquivo json.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>json_path: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece o dataframe.</p>
+<p>json_path -&gt; Argumento onde o usuário fornece o caminho de qual arquivo json ele deve ser salvo.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘meu_data_frame’</p>
+<p>json = ‘meu_json.json’</p>
+<p>df_que_era_json = tratamento.convert_dataframe_to_json(data=df, json_path: json)</p>
+<p>NOTA:</p>
+<p>Crie um arquivo json que esteja vazio, e passe para a função para que seu dataframe seja salvo nesse arquivo .json criado.</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.convert_json_to_dataframe">
+<span class="sig-name descname"><span class="pre">convert_json_to_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">json_file:</span> <span class="pre">&lt;module</span> <span class="pre">'json'</span> <span class="pre">from</span> <span class="pre">'/usr/lib/python3.10/json/__init__.py'&gt;</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.convert_json_to_dataframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.convert_json_to_dataframe" title="Permalink to this definition"></a></dt>
+<dd><p>Método convert_json_to_dataframe: Método responsável por converter um arquivo json para o formato dataframe.</p>
+<p>Parâmetros:</p>
+<p>json_file: str</p>
+<p>Descrição dos parâmetros:</p>
+<p>json_file -&gt; Argumento onde o usuário fornece o caminho do arquivo .json.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>json = ‘meu_json.json’</p>
+<p>df_que_era_json = tratamento.convert_json_to_dataframe(json_file=json)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.dataframe_for_a_row">
+<span class="sig-name descname"><span class="pre">dataframe_for_a_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.dataframe_for_a_row"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.dataframe_for_a_row" title="Permalink to this definition"></a></dt>
+<dd><p>Método dataframe_for_a_row: Método responsável por gerar um dataframe a partir de uma linha desse dataframe.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>index: int.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece o dataframe.</p>
+<p>index -&gt; Argumento onde o usuário fornece o índice da linha a ser usada como primeira linha do dataframe.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘meu_dataframe’</p>
+<p>df_a_partir_da_linha_5 = tratamento.dataframe_for_a_row(data=df, index=5)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.date_range">
+<span class="sig-name descname"><span class="pre">date_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_date</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">data_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.date_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.date_range" title="Permalink to this definition"></a></dt>
+<dd><p>Método date_range: Filtra seu dataframe de acordo com um intervalo de datas.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>start_date: str.</p>
+<p>end_date = str.</p>
+<p>data_column: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>start_date -&gt; Argumento onde o usuário fornece a data inicial para a filtragem.</p>
+<p>end_date -&gt; Argumento onde o usuário fornece a data final para a filtragem.</p>
+<p>data_column -&gt; Coluna de referência das datas.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>df_filtrado_por_intervalo_de_datas = tratamento.date_range(data=df, start_date=’01/01/2020’, end_date=’07/03/2020’, data_column=’DATA’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.remove_column">
+<span class="sig-name descname"><span class="pre">remove_column</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">last</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.remove_column"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.remove_column" title="Permalink to this definition"></a></dt>
+<dd><p>Método remove_column: Método utilizado para remover uma coluna do dataframe.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>column: str.</p>
+<p>index: int.</p>
+<p>last: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>column -&gt; Argumento onde o usuário fornece a coluna a ser removida. (OPCIONAL)</p>
+<p>index -&gt; Argumento onde o usuário fornece o índice da coluna a ser removido. (OPCIONAL)</p>
+<p>last -&gt; Argumento onde o usuário define se é a última coluna do cabeçalho ou não. (OPCIONAL)</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>CASO QUEIRA REMOVER A COLUNA PELO NOME DELA</p>
+<p>df_coluna_removida_pelo_nome = tratamento.remove_column(data=df, column=’Coluna_3’)</p>
+<p>CASO QUEIRA REMOVER A COLUNA PELO ÍNDICE DELA</p>
+<p>df_coluna_removida_pelo_indice = tratamento.remove_column(data=df, index=2)</p>
+<p>CASO QUEIRA REMOVER A ÚLTIMA COLUNA</p>
+<p>df_ultima_coluna_removida = tratamento.remove_column(data=df, last=’yes’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.remove_row">
+<span class="sig-name descname"><span class="pre">remove_row</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.remove_row"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.remove_row" title="Permalink to this definition"></a></dt>
+<dd><p>Método remove_row: Método responsável por remover uma linha do dataframe.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>index: int.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece o dataframe.</p>
+<p>index -&gt; Argumento onde o usuário fornece o índice da linha a ser removida do dataframe.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘meu_dataframe’</p>
+<p>df_sem_a_linha_10 = tratamento.remove_row(data=df, index=10)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.replace_value_in_a_position">
+<span class="sig-name descname"><span class="pre">replace_value_in_a_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">row</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.replace_value_in_a_position"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.replace_value_in_a_position" title="Permalink to this definition"></a></dt>
+<dd><p>Método replace_value_in_a_position: Método responsável por trocar o valor de uma posição do dataframe.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>column: int</p>
+<p>row: int</p>
+<p>name: str</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece o dataframe.</p>
+<p>column -&gt; Argumento onde o usuário fornece o número da coluna.</p>
+<p>row -&gt; Argumento onde o usuário fornece o número da linha.</p>
+<p>name -&gt; Valor a ser atribuido a essa coordenada.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘meu_dataframe’</p>
+<p>df_com_valor_substituido = tratamento.replace_value_in_a_position(data=Dataframe, column=3, row=2, name=’Agora eu sou um novo valor’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.treatment_of_missing_data">
+<span class="sig-name descname"><span class="pre">treatment_of_missing_data</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">treatment</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.treatment_of_missing_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.treatment_of_missing_data" title="Permalink to this definition"></a></dt>
+<dd><p>Método treatment_of_missing_data: Método de tratamento de dados faltantes.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>treatment: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>treatment -&gt; Argumento onde o usuário fornece o tipo de tratamento que ele deseja (remove, average, zero)</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>CASO QUEIRA REMOVER AS LINHAS QUE POSSUEM VALORES NULOS</p>
+<p>df_com_dados_nulos_removidos = tratamento.treatment_of_missing_data(data=df, treatment=’remove’)</p>
+<p>CASO QUEIRA PREENCHER OS VALORES NULOS COM A MÉDIA DOS VALORES DA COLUNA</p>
+<p>df_com_a_media_preenchendo_os_valores_nulos = tratamento.treatment_of_missing_data(data=df, treatment=’average’)</p>
+<p>CASO QUEIRA PREENCHER OS VALORES NULOS COM ZERO</p>
+<p>df_com_valores_nulos_preenchidos_com_zero = tratamento.treatment_of_missing_data(data=df, treatment=’zero’)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.turn_row_into_header">
+<span class="sig-name descname"><span class="pre">turn_row_into_header</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">index</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.turn_row_into_header"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.turn_row_into_header" title="Permalink to this definition"></a></dt>
+<dd><p>Método turn_row_into_header: Método responsável por transformar uma linha do dataframe em cabeçalho.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>index: int.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece o dataframe.</p>
+<p>index -&gt; Argumento onde o usuário fornece o índice da linha a ser promovida a cabeçalho.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘meu_dataframe’</p>
+<p>df_onde_a_linha_3_e_cabecalho = tratamento.turn_row_into_header(data=df, index=3)</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="src.tratamento.Treatment.year_range">
+<span class="sig-name descname"><span class="pre">year_range</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">DataFrame</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">start_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">year_column</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">DataFrame</span></span></span><a class="reference internal" href="_modules/src/tratamento.html#Treatment.year_range"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#src.tratamento.Treatment.year_range" title="Permalink to this definition"></a></dt>
+<dd><p>Método year_range: Filtra seu dataframe de acordo com um intervalo de anos.</p>
+<p>Parâmetros:</p>
+<p>data: Dataframe.</p>
+<p>start_year: str.</p>
+<p>end_year = str.</p>
+<p>year_column: str.</p>
+<p>Descrição dos parâmetros:</p>
+<p>data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</p>
+<p>start_year -&gt; Argumento onde o usuário fornece o ano inicial para a filtragem.</p>
+<p>end_year -&gt; Argumento onde o usuário fornece o ano final para a filtragem.</p>
+<p>year_column -&gt; Coluna de referência dos anos.</p>
+<p>Exemplo de uso:</p>
+<p>tratamento = Treatment()</p>
+<p>df = ‘seu_dataframe’</p>
+<p>df_filtrado_por_intervalo_de_anos = tratamento.year_range(data=df, start_year=1998, end_year=2015, year_column=’ANO’)</p>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+<section id="module-src">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-src" title="Permalink to this heading"></a></h2>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="modules.html" class="btn btn-neutral float-left" title="src" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Brayan Robert.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

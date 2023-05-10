@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>src.tratamento &mdash; MLToolbox  documentation</title>
+      <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            MLToolbox
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../modules.html">src</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">MLToolbox</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">src.tratamento</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for src.tratamento</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">pandas</span> <span class="kn">import</span> <span class="n">DataFrame</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">from</span> <span class="nn">loguru</span> <span class="kn">import</span> <span class="n">logger</span>
+
+<div class="viewcode-block" id="Treatment"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment">[docs]</a><span class="k">class</span> <span class="nc">Treatment</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+       <span class="bp">self</span><span class="o">.</span><span class="n">colunas_vazias</span> <span class="o">=</span> <span class="p">[]</span>
+       <span class="k">pass</span>
+
+<div class="viewcode-block" id="Treatment.add_column_year"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.add_column_year">[docs]</a>    <span class="k">def</span> <span class="nf">add_column_year</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método add_column_year: Adiciona uma coluna de ano baseado na coluna de datas de um dataframe temporal.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        column: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        column -&gt; Coluna de referência (DATA) para que a coluna de ano seja criada baseada nela.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        df_com_coluna_de_ano = tratamento.add_column_year(data=df, column=&#39;DATA&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Adcionando coluna de ano...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Ano&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">year</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Coluna de ano adiciona com suceso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+    
+<div class="viewcode-block" id="Treatment.add_column_month"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.add_column_month">[docs]</a>    <span class="k">def</span> <span class="nf">add_column_month</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método add_column_month: Adiciona uma coluna de mês baseado na coluna de datas de um dataframe temporal.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        column: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+<span class="sd"> </span>
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        column -&gt; Coluna de referência (DATA) para que a coluna de ano seja criada baseada nela.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        df_com_coluna_de_mes = tratamento.add_column_month(data=df, column=&#39;DATA&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;adicionando coluna de mês...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Mês&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">month</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Coluna de mês adicionada com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+    
+<div class="viewcode-block" id="Treatment.add_column_day"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.add_column_day">[docs]</a>    <span class="k">def</span> <span class="nf">add_column_day</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método add_column_day: Adiciona uma coluna de dia baseado na coluna de datas de um dataframe temporal.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        column: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        column -&gt; Coluna de referência (DATA) para que a coluna de ano seja criada baseada nela.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        df_com_coluna_de_ano = tratamento.add_column_day(data=df, column=&#39;DATA&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;adicionando coluna de dia...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;Dia&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">day_name</span><span class="p">())</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Coluna de dia adicionada com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+
+<div class="viewcode-block" id="Treatment.treatment_of_missing_data"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.treatment_of_missing_data">[docs]</a>    <span class="k">def</span> <span class="nf">treatment_of_missing_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">treatment</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método treatment_of_missing_data: Método de tratamento de dados faltantes.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        treatment: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        treatment -&gt; Argumento onde o usuário fornece o tipo de tratamento que ele deseja (remove, average, zero)</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        CASO QUEIRA REMOVER AS LINHAS QUE POSSUEM VALORES NULOS</span>
+
+<span class="sd">        df_com_dados_nulos_removidos = tratamento.treatment_of_missing_data(data=df, treatment=&#39;remove&#39;)</span>
+
+<span class="sd">        CASO QUEIRA PREENCHER OS VALORES NULOS COM A MÉDIA DOS VALORES DA COLUNA</span>
+
+<span class="sd">        df_com_a_media_preenchendo_os_valores_nulos = tratamento.treatment_of_missing_data(data=df, treatment=&#39;average&#39;)</span>
+
+<span class="sd">        CASO QUEIRA PREENCHER OS VALORES NULOS COM ZERO</span>
+
+<span class="sd">        df_com_valores_nulos_preenchidos_com_zero = tratamento.treatment_of_missing_data(data=df, treatment=&#39;zero&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">match</span> <span class="n">treatment</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s2">&quot;remove&quot;</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;removendo valores nulos...&#39;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Valores nulos removidos com sucesso!&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            <span class="k">case</span> <span class="s2">&quot;average&quot;</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;preenchendo os valores nulos com a média dos dados...&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Valores nulos preenchidos pela média com sucesso!&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            <span class="k">case</span> <span class="s2">&quot;zero&quot;</span><span class="p">:</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;prenchendo os valores nulos com zero...&quot;</span><span class="p">)</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Valores nulos preenchidos por zero com sucesso!&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                 <span class="k">raise</span> <span class="ne">KeyError</span><span class="p">(</span><span class="s1">&#39;Por favor, insira remover para remover valores nulos, media para preencher com a média os valores nulos ou zero para preencher com zero os valores nulos!&#39;</span><span class="p">)</span></div>
+    
+<div class="viewcode-block" id="Treatment.date_range"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.date_range">[docs]</a>    <span class="k">def</span> <span class="nf">date_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">start_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">end_date</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">data_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método date_range: Filtra seu dataframe de acordo com um intervalo de datas.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        start_date: str.</span>
+
+<span class="sd">        end_date = str.</span>
+
+<span class="sd">        data_column: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        start_date -&gt; Argumento onde o usuário fornece a data inicial para a filtragem.</span>
+
+<span class="sd">        end_date -&gt; Argumento onde o usuário fornece a data final para a filtragem.</span>
+
+<span class="sd">        data_column -&gt; Coluna de referência das datas.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        df_filtrado_por_intervalo_de_datas = tratamento.date_range(data=df, start_date=&#39;01/01/2020&#39;, end_date=&#39;07/03/2020&#39;, data_column=&#39;DATA&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;filtrando por intervalo de datas&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="n">data_column</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start_date</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">data_column</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_date</span><span class="p">)]</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dataframe filtrado no intervalo de </span><span class="si">{</span><span class="n">start_date</span><span class="si">}</span><span class="s1"> até </span><span class="si">{</span><span class="n">end_date</span><span class="si">}</span><span class="s1"> com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+    
+<div class="viewcode-block" id="Treatment.year_range"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.year_range">[docs]</a>    <span class="k">def</span> <span class="nf">year_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">start_year</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">end_year</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">year_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método year_range: Filtra seu dataframe de acordo com um intervalo de anos.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        start_year: str.</span>
+
+<span class="sd">        end_year = str.</span>
+
+<span class="sd">        year_column: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        start_year -&gt; Argumento onde o usuário fornece o ano inicial para a filtragem.</span>
+
+<span class="sd">        end_year -&gt; Argumento onde o usuário fornece o ano final para a filtragem.</span>
+
+<span class="sd">        year_column -&gt; Coluna de referência dos anos.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        df_filtrado_por_intervalo_de_anos = tratamento.year_range(data=df, start_year=1998, end_year=2015, year_column=&#39;ANO&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;filtrando por intervalo de ano...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[(</span><span class="n">data</span><span class="p">[</span><span class="n">year_column</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">start_year</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">year_column</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">end_year</span><span class="p">)]</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dataframe filtrado no intervalo de </span><span class="si">{</span><span class="n">start_year</span><span class="si">}</span><span class="s1"> até </span><span class="si">{</span><span class="n">end_year</span><span class="si">}</span><span class="s1"> com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+    
+<div class="viewcode-block" id="Treatment.column_range"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.column_range">[docs]</a>    <span class="k">def</span> <span class="nf">column_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">start_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">end_column</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método column_range: Filtra seu dataframe de acordo com um intervalo de colunas.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        start_column: str.</span>
+
+<span class="sd">        end_column = str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        start_column -&gt; Argumento onde o usuário fornece a coluna inicial da filtragem.</span>
+
+<span class="sd">        end_column -&gt; argumento onde o usuário fornece a coluna final da filtragem.</span>
+
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        df_filtrado_por_intervalo_de_colunas = tratamento.column_range(data=df, start_column=&#39;Coluna_5&#39;, end_column=&#39;coluna_10&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;filtrando por intervalo de colunas...&#39;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">start_column</span><span class="p">:</span><span class="n">end_column</span><span class="p">]</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Dataframe filtrado no intervalo de colunas da coluna </span><span class="si">{</span><span class="n">start_column</span><span class="si">}</span><span class="s1"> até a coluna </span><span class="si">{</span><span class="n">end_column</span><span class="si">}</span><span class="s1"> com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span></div>
+    
+<div class="viewcode-block" id="Treatment.convert_json_to_dataframe"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.convert_json_to_dataframe">[docs]</a>    <span class="k">def</span> <span class="nf">convert_json_to_dataframe</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">json_file</span><span class="p">:</span> <span class="n">json</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método convert_json_to_dataframe: Método responsável por converter um arquivo json para o formato dataframe.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        json_file: str</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        json_file -&gt; Argumento onde o usuário fornece o caminho do arquivo .json.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        json = &#39;meu_json.json&#39;</span>
+
+<span class="sd">        df_que_era_json = tratamento.convert_json_to_dataframe(json_file=json)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Transformando json em dataframe...&#39;</span><span class="p">)</span>
+        <span class="c1"># Lendo o arquivo JSON em um dicionário</span>
+        <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_file</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+        <span class="c1"># Convertendo o dicionário em um DataFrame</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="o">.</span><span class="n">from_dict</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Json transformado para Dataframe com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span></div>
+    
+<div class="viewcode-block" id="Treatment.check_column_with_null_values"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.check_column_with_null_values">[docs]</a>    <span class="k">def</span> <span class="nf">check_column_with_null_values</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">[</span><span class="nb">str</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método check_column_with_null_values: Método responsável por informar uma lista com todas as colunas que possuem valores vazios.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece o dataframe.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;meu_dataframe&#39;</span>
+
+<span class="sd">        lista_das_colunas_com_valores_nulos = tratamento.check_column_with_null_values(data=df)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Checando colunas com valores nulos...&#39;</span><span class="p">)</span>
+        <span class="n">columns_with_null_values</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">data</span><span class="o">.</span><span class="n">isnull</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">()]</span><span class="o">.</span><span class="n">tolist</span><span class="p">()</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Colunas com valores nulos checadas com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">columns_with_null_values</span></div>
+    
+<div class="viewcode-block" id="Treatment.remove_column"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.remove_column">[docs]</a>    <span class="k">def</span> <span class="nf">remove_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">last</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método remove_column: Método utilizado para remover uma coluna do dataframe.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        column: str.</span>
+
+<span class="sd">        index: int.</span>
+
+<span class="sd">        last: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        column -&gt; Argumento onde o usuário fornece a coluna a ser removida. (OPCIONAL)</span>
+
+<span class="sd">        index -&gt; Argumento onde o usuário fornece o índice da coluna a ser removido. (OPCIONAL)</span>
+
+<span class="sd">        last -&gt; Argumento onde o usuário define se é a última coluna do cabeçalho ou não. (OPCIONAL)</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        CASO QUEIRA REMOVER A COLUNA PELO NOME DELA</span>
+
+<span class="sd">        df_coluna_removida_pelo_nome = tratamento.remove_column(data=df, column=&#39;Coluna_3&#39;)</span>
+
+<span class="sd">        CASO QUEIRA REMOVER A COLUNA PELO ÍNDICE DELA</span>
+
+<span class="sd">        df_coluna_removida_pelo_indice = tratamento.remove_column(data=df, index=2)</span>
+
+<span class="sd">        CASO QUEIRA REMOVER A ÚLTIMA COLUNA</span>
+
+<span class="sd">        df_ultima_coluna_removida = tratamento.remove_column(data=df, last=&#39;yes&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">index</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">column</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Removendo coluna...&#39;</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">column</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Coluna removida com sucesso!&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">elif</span> <span class="n">column</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">index</span> <span class="o">!=</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Removendo coluna...&#39;</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">columns</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Coluna removida com sucesso!&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">elif</span> <span class="n">last</span> <span class="o">==</span> <span class="s1">&#39;yes&#39;</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Removendo a última coluna...&#39;</span><span class="p">)</span>
+            <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Última coluna removida com sucesso!&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">data</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s1">&#39;Error&#39;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="Treatment.remove_row"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.remove_row">[docs]</a>    <span class="k">def</span> <span class="nf">remove_row</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método remove_row: Método responsável por remover uma linha do dataframe.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        index: int.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece o dataframe.</span>
+
+<span class="sd">        index -&gt; Argumento onde o usuário fornece o índice da linha a ser removida do dataframe.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;meu_dataframe&#39;</span>
+
+<span class="sd">        df_sem_a_linha_10 = tratamento.remove_row(data=df, index=10)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Removendo linha...&#39;</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">index</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Linha removida com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div>
+    
+<div class="viewcode-block" id="Treatment.convert_dataframe_to_json"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.convert_dataframe_to_json">[docs]</a>    <span class="k">def</span> <span class="nf">convert_dataframe_to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">json_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">json</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método convert_dataframe_to_json: Método responsável por converter um dataframe em um arquivo json.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        json_path: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece o dataframe.</span>
+
+<span class="sd">        json_path -&gt; Argumento onde o usuário fornece o caminho de qual arquivo json ele deve ser salvo.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;meu_data_frame&#39;</span>
+
+<span class="sd">        json = &#39;meu_json.json&#39;</span>
+
+<span class="sd">        df_que_era_json = tratamento.convert_dataframe_to_json(data=df, json_path: json)</span>
+
+
+<span class="sd">        NOTA:</span>
+
+<span class="sd">        Crie um arquivo json que esteja vazio, e passe para a função para que seu dataframe seja salvo nesse arquivo .json criado.</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Transformando dataframe em json...&#39;</span><span class="p">)</span>
+        <span class="n">dados_dict</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">to_dict</span><span class="p">(</span><span class="n">orient</span><span class="o">=</span><span class="s1">&#39;records&#39;</span><span class="p">)</span>
+        <span class="n">dados_json</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">dados_dict</span><span class="p">)</span>
+
+        <span class="k">try</span><span class="p">:</span>
+            <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">json_path</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">json_file</span><span class="p">:</span>
+                <span class="n">json_file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">dados_json</span><span class="p">)</span>
+            
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Dataframe transformado para json com sucesso!&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">0</span>
+        <span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Erro no processo da transformação! </span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+            <span class="k">return</span> <span class="mi">1</span></div>
+    
+<div class="viewcode-block" id="Treatment.dataframe_for_a_row"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.dataframe_for_a_row">[docs]</a>    <span class="k">def</span> <span class="nf">dataframe_for_a_row</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método dataframe_for_a_row: Método responsável por gerar um dataframe a partir de uma linha desse dataframe.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        index: int.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece o dataframe.</span>
+
+<span class="sd">        index -&gt; Argumento onde o usuário fornece o índice da linha a ser usada como primeira linha do dataframe.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;meu_dataframe&#39;</span>
+
+<span class="sd">        df_a_partir_da_linha_5 = tratamento.dataframe_for_a_row(data=df, index=5)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Gerando um dataframe a partir de uma linha...&#39;</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">:]</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Dataframe gerado com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span></div>
+    
+<div class="viewcode-block" id="Treatment.turn_row_into_header"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.turn_row_into_header">[docs]</a>    <span class="k">def</span> <span class="nf">turn_row_into_header</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">index</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span>  <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método turn_row_into_header: Método responsável por transformar uma linha do dataframe em cabeçalho.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        index: int.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece o dataframe.</span>
+
+<span class="sd">        index -&gt; Argumento onde o usuário fornece o índice da linha a ser promovida a cabeçalho.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;meu_dataframe&#39;</span>
+
+<span class="sd">        df_onde_a_linha_3_e_cabecalho = tratamento.turn_row_into_header(data=df, index=3)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Transformando linha em cabeçalho...&#39;</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">set_axis</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">index</span><span class="o">+</span><span class="mi">1</span><span class="p">:]</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Linha transformada em cabeçalho com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">df</span></div>
+    
+<div class="viewcode-block" id="Treatment.change_data_type"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.change_data_type">[docs]</a>    <span class="k">def</span> <span class="nf">change_data_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">type</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método change_data_type: Método para alterar o tipo de dados de uma coluna.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        column: str.</span>
+
+<span class="sd">        type: str.</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece um conjunto de dados em formato de dataframe.</span>
+
+<span class="sd">        column -&gt; Argumento onde o usuário fornece a coluna a ser alterada o tipo de dados.</span>
+
+<span class="sd">        type -&gt; Argumento onde o usuário fornece para qual tipo de dados deseja alterar.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;seu_dataframe&#39;</span>
+
+<span class="sd">        CASO QUEIRA ALTERAR PARA DATETIME</span>
+
+<span class="sd">        df_com_coluna_alterada_para_datetime = tratamento.change_data_type(data=df, column=&#39;DATA&#39;, type=&#39;datetime&#39;)</span>
+
+<span class="sd">        </span>
+<span class="sd">        NOTA:</span>
+
+<span class="sd">        Nessa versão só está disponível a mudança para datetime</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Alterando tipo de dados...&#39;</span><span class="p">)</span>
+
+        <span class="k">match</span> <span class="nb">type</span><span class="p">:</span>
+            <span class="k">case</span> <span class="s1">&#39;datetime&#39;</span><span class="p">:</span>
+                <span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="n">column</span><span class="p">])</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Coluna </span><span class="si">{</span><span class="n">column</span><span class="si">}</span><span class="s1"> alterada para datetime com sucesso!&#39;</span><span class="p">)</span>
+                <span class="k">return</span> <span class="n">data</span>
+            <span class="k">case</span><span class="w"> </span><span class="k">_</span><span class="p">:</span>
+                <span class="k">return</span> <span class="s1">&#39;error&#39;</span></div>
+    
+<div class="viewcode-block" id="Treatment.replace_value_in_a_position"><a class="viewcode-back" href="../../src.html#src.tratamento.Treatment.replace_value_in_a_position">[docs]</a>    <span class="k">def</span> <span class="nf">replace_value_in_a_position</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">data</span><span class="p">:</span> <span class="n">DataFrame</span><span class="p">,</span> <span class="n">column</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">row</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">DataFrame</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Método replace_value_in_a_position: Método responsável por trocar o valor de uma posição do dataframe.</span>
+
+<span class="sd">        Parâmetros:</span>
+
+<span class="sd">        data: Dataframe.</span>
+
+<span class="sd">        column: int</span>
+
+<span class="sd">        row: int</span>
+
+<span class="sd">        name: str</span>
+
+
+<span class="sd">        Descrição dos parâmetros:</span>
+
+<span class="sd">        data -&gt; Argumento onde o usuário fornece o dataframe.</span>
+
+<span class="sd">        column -&gt; Argumento onde o usuário fornece o número da coluna.</span>
+
+<span class="sd">        row -&gt; Argumento onde o usuário fornece o número da linha.</span>
+
+<span class="sd">        name -&gt; Valor a ser atribuido a essa coordenada.</span>
+
+<span class="sd">        Exemplo de uso:</span>
+
+<span class="sd">        tratamento = Treatment()</span>
+
+<span class="sd">        df = &#39;meu_dataframe&#39;</span>
+
+<span class="sd">        df_com_valor_substituido = tratamento.replace_value_in_a_position(data=Dataframe, column=3, row=2, name=&#39;Agora eu sou um novo valor&#39;)</span>
+
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Substituindo um valor em uma posição...&#39;</span><span class="p">)</span>
+        <span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">column</span><span class="p">,</span> <span class="n">row</span><span class="p">]</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Valor substituido com sucesso!&#39;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">data</span></div></div>
+
+        
+
+
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Brayan Robert.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

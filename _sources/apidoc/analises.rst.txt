@@ -1,7 +1,0 @@
-analises module
-===============
-
-.. automodule:: analises
-   :members:
-   :undoc-members:
-   :show-inheritance:

@@ -1,7 +1,0 @@
-processamentodados module
-=========================
-
-.. automodule:: processamentodados
-   :members:
-   :undoc-members:
-   :show-inheritance:
